@@ -371,6 +371,9 @@ footer {
 }
 
 @media only screen and (min-width: 995px) {
+  .first__section button {
+    width: 50%;
+  }
 
   .third__section {
     display: grid;
