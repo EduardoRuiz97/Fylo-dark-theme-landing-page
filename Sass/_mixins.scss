@@ -1,0 +1,101 @@
+@use './variables';
+
+@mixin mainContainer {
+  width: 100%;
+  padding: 25px 5%;
+  
+  @media only screen and (min-width:996px) {
+    padding: 50px 5.75%;
+  }
+
+  @media only screen and (min-width:1200px) {
+    padding: 60px 6.25%;
+  }
+
+  @media only screen and (min-width:1400px) {
+    padding: 75px 7.5%;
+  }
+};
+
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin titles() {
+  font-size: 1.3em;
+  font-family: variables.$RaleWay;
+  font-weight: 700;
+  line-height: 1.2;
+  color: variables.$White;
+
+
+  @media only screen and (min-width:777px) {
+    font-size: 1.6em;
+  }
+
+  @media only screen and (min-width:996px) {
+    font-size: 1.9em;
+  }
+
+  @media only screen and (min-width:1200px) {
+    font-size: 2.2em;
+  }
+
+  @media only screen and (min-width:1400px) {
+    font-size: 2.4em;
+  }
+
+}
+
+@mixin subtitles() {
+  font-family: variables.$RaleWay;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.2;
+  color: variables.$White;
+
+  @media only screen and (min-width:1400px) {
+    font-size: 1.3em;
+  }
+
+}
+
+@mixin paragraphs ($fontSize) {
+  font-family: variables.$OpenSans;
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: 1.7;
+  color: variables.$White;
+  opacity: 0.75;
+}
+
+
+@mixin button ($width, $border-radius) {
+  width: $width;
+  border-radius: $border-radius;
+  padding: 1.2em;
+  font-size: 0.95em;
+  color: white;
+  font-weight: 700;
+  font-family: variables.$OpenSans;
+  background: rgb(101,226,217);
+  background: linear-gradient(90deg, rgba(101,226,217,1) 0%, rgba(51,158,204,1) 100%);
+
+  &:hover {
+    background: variables.$CyanInsideCallToActionGradient;
+    opacity: 1.5;
+  }
+}
+
+

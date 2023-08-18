@@ -1,0 +1,605 @@
+@use './mixins';
+@use './variables';
+
+/*----------header---------------*/
+
+.header {
+  @include mixins.mainContainer();
+  @include mixins.flexRow();
+  background-color: variables.$DarkBlueIntroAndEmailSignUpBackground;
+
+  &__logo {
+
+    width: 25%;
+
+    @media only screen and (min-width: 996px) {
+      width: 180px;
+    }
+  }
+
+  &__navbar {
+
+    width: 40%;
+
+    @media only screen and (min-width: 1200px) {
+      width: 20%;
+    }
+
+    &__list {
+      @include mixins.flexRow();
+
+      li {
+        color: variables.$White;
+        font-family: variables.$RaleWay;
+        font-size: 0.8em;
+        font-weight: 400;
+        opacity: 0.75;
+
+        &:hover {
+          opacity: 1;
+          text-decoration: underline;
+        }
+
+        @media only screen and (min-width: 1200px) {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+
+/*--------------main-------------------*/
+
+main {
+  @include mixins.flexColumn();
+  background-color: variables.$DarkBlueMainBackground;
+
+  .first-section {
+    @include mixins.mainContainer();
+    @include mixins.flexColumn();
+    gap: 2em;
+    text-align: center;
+    background-color: variables.$DarkBlueIntroAndEmailSignUpBackground;
+
+    img {
+      width: 80%;
+      margin: auto;
+      @media only screen and (min-width: 996px) {
+        width: 60%;
+      }
+    }
+
+    h1 {
+      @include mixins.titles();
+
+      @media only screen and (min-width: 996px) {
+        width: 60%;
+      }
+    }
+
+    p {
+      @include mixins.paragraphs(0.8em);
+
+      @media only screen and (min-width: 996px) {
+        width: 60%;
+        @include mixins.paragraphs(1.2em);
+      }
+    }
+
+    button {
+      @include mixins.button(180px, 50px)
+    }
+  }
+
+  .second-section {
+    @include mixins.mainContainer();
+    
+    &__container {
+
+      width: 100%;
+
+
+      @media only screen and (min-width: 1200px) {
+        width: 80%;
+        margin: auto;
+      }
+
+      @media only screen and (min-width: 1400px) {
+        width: 70%;
+      }
+
+      &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+
+
+        @media only screen and (min-width: 996px) {
+          display: grid;
+          grid-template-columns: 49% 49%;
+        }
+
+        &__item {
+
+          &__reasson {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+            text-align: center;
+
+            h2 {
+              @include mixins.subtitles();
+            }
+
+            p {
+              @include mixins.paragraphs(0.8em);
+
+              @media only screen and (min-width: 996px) {
+                width: 60%;
+                @include mixins.paragraphs(1em);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .third-section {
+    @include mixins.mainContainer();
+    @include mixins.flexColumn();
+    gap: 50px;
+
+    @media only screen and (min-width:996px) {
+      @include mixins.flexRow();
+    }
+
+    &__img {
+      width: 80%;
+      margin: auto;
+
+      @media only screen and (min-width:996px) {
+        width: 50%;
+      }
+    }
+
+    &__text {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.4em;
+      
+      h1 {
+        @include mixins.titles();
+
+        @media only screen and (min-width:996px) {
+          width: 60%;
+        }
+      }
+
+      p {
+        @include mixins.paragraphs(0.8em);
+
+        @media only screen and (min-width: 996px) {
+          width: 80%;
+          @include mixins.paragraphs(1em);
+        }
+      }
+
+      button {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1em;
+        padding-bottom: 5px;
+        border-bottom: 1px solid variables.$CyanInsideCallToActionGradient ;
+        color: variables.$CyanInsideCallToActionGradient;
+
+        span {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          border-radius: 50%;
+          background-color: variables.$CyanInsideCallToActionGradient;
+
+          .bx {
+            color: white;
+          }
+        }
+
+
+        &:hover {
+          color: white;
+          border-bottom: 1px solid white;
+
+          span {
+            background-color: white;
+            .bx {
+              color: variables.$DarkBlueMainBackground
+            }
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  .fourth-section {
+    @include mixins.mainContainer();
+
+    &__container {
+      position: relative;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+
+        &__item {
+          width: 290px;
+          padding: 25px 20px;
+          background-color: variables.$DarkBlueTestimonialsBackground;
+          border-radius: 5px;
+          box-shadow: 7px 7px rgb(0, 0, 0, 0.1);
+          z-index: 1000000000;
+          &__testimony {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.4em;
+
+            p {
+              @include mixins.paragraphs(0.9em);
+            }
+
+            &__usser {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 10px;
+
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+              }
+
+              span {
+                display: flex;
+                flex-direction: column;
+                font-family: variables.$OpenSans;
+                color: white;
+                opacity: 0.75;
+                font-size: 00.8em;
+              }
+
+            }
+
+          }
+
+          @media only screen and (min-width: 1400px) {
+            width: 365px;
+          }
+
+        }
+
+        @media only screen and (min-width:996px) {
+          flex-direction: row;
+        }
+      }
+
+      &__icon {
+        position: absolute;
+        top: -5%;
+        left: 2%;
+
+        @media only screen and (min-width:777px) {
+          top: -5%;
+          left: 25%;
+        }
+
+        @media only screen and (min-width:996px) {
+          top: -20%;
+          left: 0%;
+        }
+
+        @media only screen and (min-width:1200px) {
+          top: -18%;
+          left: 5%;
+        }
+
+        @media only screen and (min-width:1400px) {
+          top: -18%;
+          left: 0%;
+        }
+
+        @media only screen and (min-width:1600px) {
+          top: -18%;
+          left: 12%;
+        }
+      }
+    }
+  }
+
+  .fifth-section {
+    @include mixins.mainContainer();
+    position: relative;
+    padding-top: 200px;
+
+    &__container {
+      width: 90%;
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      background-color: variables.$DarkBlueIntroAndEmailSignUpBackground;
+      padding: 40px 25px;
+      border-radius: 10px;
+      text-align: center;
+
+      h1 {
+        @include mixins.titles();
+        margin-bottom: 20px;
+      }
+
+      p {
+        @include mixins.paragraphs(0.9em);
+
+        margin-bottom: 30px;
+
+        @media only screen and (min-width:1200px) {
+          width: 75%;
+          margin: 0 auto 30px;
+          @include mixins.paragraphs(1.1em);
+        }
+
+      }
+
+      &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        input {
+          width: 100%;
+          border-radius: 50px;
+          outline: none;
+          padding: 1.25em 20px;
+          border: none;
+        }
+
+        button {
+          @include mixins.button(100%, 50px)
+        }
+
+
+
+        @media only screen and (min-width: 996px) {
+          flex-direction: row;
+          justify-content: space-evenly;
+
+          input {
+            width: 60%;
+          }
+
+          button {
+            @include mixins.button(23%, 50px)
+          }
+
+          
+        }
+      }
+    }
+
+
+    @media only screen and (min-width:996px) {
+
+      &__container {
+        width: 75%;
+        top: 0;
+        left: 12.5%;
+      }
+    }
+  
+    @media only screen and (min-width:1200px) {
+
+      &_container {
+        width: 70%;
+        left: 15%;
+      }
+    }
+  
+    @media only screen and (min-width:1400px) {
+      &__container {
+        width: 60%;
+        left: 20%;
+      }
+    }
+
+
+  }
+}
+
+.footer {
+  @include mixins.mainContainer();
+  padding-top: 200px;
+  background-color: variables.$DarkBlueFooterBackground;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
+    font-family: variables.$OpenSans;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+
+      span {
+        color: variables.$White;
+        opacity: 0.75;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1em;
+      }
+
+      &__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    &__navbar {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        color: variables.$White;
+  
+        &__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 20px;
+
+          &__options {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+
+
+            li {
+              opacity: 0.75;
+
+              &:hover {
+                opacity: unset;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__sotial-media {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9em;
+
+      span {
+        width: 100%;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        border: 1px solid white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .bx {
+          color: white;
+          font-size: 15px;
+        }
+
+        &:hover {
+          border: 1px solid variables.$CyanInsideCallToActionGradient; 
+
+          .bx {
+            color: variables.$CyanInsideCallToActionGradient;
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+   
+
+
+  @media only screen and (min-width:996px) {
+    padding-top: 225px;
+
+    &__contact {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 32% 32% 32%;
+
+      &__navbar {
+        &__list {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width:1200px) {
+    padding-top: 200px;
+
+    &__contact {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 40% 20% 32%;
+
+      &__info {
+        flex-direction: row;
+
+        span {
+          align-items: flex-start;
+        }
+      }
+
+    }
+  }
+
+  @media only screen and (min-width:1400px) {
+    padding-top: 175px;
+  }
+}
