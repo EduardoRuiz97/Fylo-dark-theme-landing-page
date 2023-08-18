@@ -61,6 +61,11 @@ main {
     gap: 2em;
     text-align: center;
     background-color: variables.$DarkBlueIntroAndEmailSignUpBackground;
+    background-image: url('../images/bg-curvy-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 100%;
+
 
     img {
       width: 80%;
@@ -69,6 +74,7 @@ main {
         width: 60%;
       }
     }
+    
 
     h1 {
       @include mixins.titles();
@@ -89,6 +95,11 @@ main {
 
     button {
       @include mixins.button(180px, 50px)
+    }
+
+
+    @media only screen and (min-width: 1200px) {
+      background-image: url('../images/bg-curvy-desktop.svg');
     }
   }
 
